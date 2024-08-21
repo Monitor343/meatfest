@@ -2540,7 +2540,7 @@ input, select, textarea {
 	}
 
 		#header h1 {
-			padding: 0 0 2.75em 0;
+			padding: 0 0 0em 0;
 			margin: 0;
 		}
 
@@ -2688,7 +2688,7 @@ input, select, textarea {
 			left: 0;
 			width: 100%;
 			background: #212121;
-			background: rgba(27, 27, 27, 0.75);
+			background: rgba(27, 27, 27, 0.5);
 			color: #fff;
 			padding: 1.5em 0;
 		}
