@@ -2674,7 +2674,7 @@ input, select, textarea {
 /* Banner */
 
 	#banner {
-		background-image: url("images/PXL_20231014_122141278.MP-Large-crop.jpg");
+		background-image: url("../../images/PXL_20231014_122141278.MP-Large-crop.jpg");
 		background-position: center center;
 		background-size: cover;
 		height: 28em;
