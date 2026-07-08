@@ -1,0 +1,325 @@
+<!DOCTYPE HTML>
+<!--
+	Arcana by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>MeatFest '026'</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="robots" content="noindex, nofollow" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<style>
+			.conditional-field {
+				max-height: 0;
+				opacity: 0;
+				overflow: hidden;
+				transform: translateY(-8px);
+				transition: max-height 0.4s ease, opacity 0.3s ease, transform 0.3s ease;
+				pointer-events: none;
+			}
+			.conditional-field.is-visible {
+				max-height: 12em;
+				opacity: 1;
+				transform: translateY(0);
+				pointer-events: auto;
+			}
+			.choice {
+				position: relative;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+				box-sizing: border-box;
+				padding: 0.4em 0.9em;
+				border-radius: 999px;
+				border: 2px solid rgba(0, 0, 0, 0.15);
+				cursor: pointer;
+				text-align: center;
+				transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+			}
+			.choice input[type="radio"] {
+				position: absolute;
+				width: 1px;
+				height: 1px;
+				margin: -1px;
+				padding: 0;
+				border: 0;
+				overflow: hidden;
+				clip: rect(0, 0, 0, 0);
+				white-space: nowrap;
+			}
+			.choice:hover {
+				border-color: #37c0fb;
+			}
+			.choice.selected {
+				background-color: #37c0fb;
+				border-color: #37c0fb;
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header">
+
+					<!-- Logo -->
+					<section id="banner">
+						<header>
+							<h1><a href="index.html" id="logo">Welcome to MeatFest '026!</a></h1>
+						</header>
+					</section>
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="index.html">Home</a></li>
+								<li>
+									<a href="#">The Menu</a>
+									<ul>
+										<li><a href="the-meats.html">The MEATS!</a></li>
+										<li><a href="the-sides.html">The Sides!</a></li>
+										<li><a href="the-desserts.html">The Desserts!</a></li>
+									</ul>
+								</li>
+								<li><a href="activities.html">Activities</a></li>
+								<li><a href="parking.html">Parking</a></li>
+								<li>
+									<a href="#">Photos</a>
+									<ul>
+										<li><a href="https://photos.app.goo.gl/n517G1arDjTivvLh7" target="_blank">MeatFest '025</a></li>
+										<li><a href="https://photos.app.goo.gl/3TVMduja4DZUdbaLA" target="_blank">MeatFest '024</a></li>
+										<li><a href="https://photos.app.goo.gl/edKtUVrAJc3CkzmZ8" target="_blank">MeatFest '023</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="participate.html">Participate</a>
+									<ul>
+										<li><a href="the-cookers.html">The Cookers!</a></li>
+									</ul>
+								</li>
+							</ul>
+						</nav>
+
+				</div>
+
+			<!-- Main -->
+				<section class="wrapper style1">
+					<div class="container">
+						<div class="row gtr-200">
+							<div class="col-4 col-12-narrower">
+								<div id="sidebar">
+
+									<!-- Sidebar -->
+
+										<section>
+											<h3>The Details</h3>
+												<p><b>Location:</b> 4631 Olson Dr &nbspEau Claire, Wisconsin</p>
+												<p><b>Date: </b>Saturday October 3rd 2026</p>
+												<p><b>Time:</b> People may start arriving at 3:00pm. I am planning on having food ready by 4:30pm. See the <a href="activities.html">Activities</a> page for fun things to do while you wait.</p>
+												<p>If you are interested in comming earlier, check out the <a href="participate.html">Participate</a> page for details.</p>
+												<footer>
+
+												</footer>
+										</section>
+								</div>
+							</div>
+							<div class="col-8  col-12-narrower imp-narrower">
+								<div id="content">
+
+									<!-- Content -->
+
+										<article>
+											<header>
+												<h2>RSVP for MeatFest '026</h2>
+												<p>Fill out the form below to let me know you're coming. Thanks!</p>
+											</header>
+
+											<form id="rsvp-form" method="post" action="https://forms.un-static.com/forms/2ff4d00b9b08dc9d5572cf7132909b5a2a533974">
+												<div class="row gtr-50">
+													<div class="col-12">
+														<label for="rsvp-name">Name</label>
+														<input type="text" name="name" id="rsvp-name" placeholder="Name" required />
+													</div>
+													<div class="col-12">
+														<label for="rsvp-email">Email</label>
+														<input type="email" name="email" id="rsvp-email" placeholder="Email" required />
+														<p><i>I promise not to sell your email to data brokers.</i></p>
+													</div>
+													<div class="col-12">
+														<label for="rsvp-party-size">How many will be joining?</label>
+														<input type="number" name="party_size" id="rsvp-party-size" placeholder="Number of people" min="1" step="1" required />
+													</div>
+
+													<div class="col-12">
+														<label>Will you be bringing a dish?</label>
+														<ul class="actions">
+															<li><label class="choice"><input type="radio" name="bringing_dish" value="Yes" required /> Yes</label></li>
+															<li><label class="choice"><input type="radio" name="bringing_dish" value="No" required /> No</label></li>
+														</ul>
+													</div>
+													<div class="col-12 conditional-field" id="dish-detail">
+														<label for="rsvp-dish">What dish will you be bringing?</label>
+														<input type="text" name="dish" id="rsvp-dish" placeholder="Dish" />
+													</div>
+
+													<div class="col-12">
+														<label>Are you interested in coming early to help with the cooking of The MEATS?</label>
+														<ul class="actions">
+															<li><label class="choice"><input type="radio" name="coming_early" value="Yes" required /> Yes</label></li>
+															<li><label class="choice"><input type="radio" name="coming_early" value="No" required /> No</label></li>
+														</ul>
+													</div>
+
+													<div class="col-12 conditional-field" id="apparatus-detail">
+														<label>Will you be bringing your own BBQ apparatus?</label>
+														<ul class="actions">
+															<li><label class="choice"><input type="radio" name="own_apparatus" value="Yes" /> Yes</label></li>
+															<li><label class="choice"><input type="radio" name="own_apparatus" value="No" /> No</label></li>
+														</ul>
+													</div>
+
+													<div class="col-12 conditional-field" id="transport-detail">
+														<label>Do you require BBQ apparatus transportation support?</label>
+														<ul class="actions">
+															<li><label class="choice"><input type="radio" name="transport_support" value="Yes" /> Yes</label></li>
+															<li><label class="choice"><input type="radio" name="transport_support" value="No" /> No</label></li>
+														</ul>
+													</div>
+
+													<div class="col-12">
+														<label for="rsvp-allergies">Do you have any food allergies I should be aware of?</label>
+														<textarea name="allergies" id="rsvp-allergies" placeholder="Allergies (enter &quot;None&quot; if not applicable)" rows="4" required></textarea>
+													</div>
+
+													<div class="col-12">
+														<ul class="actions">
+															<li><input type="submit" class="button alt" value="Send RSVP" /></li>
+														</ul>
+													</div>
+												</div>
+											</form>
+										</article>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Footer -->
+				<div id="footer">
+					<div class="container">
+						<div class="row">
+							<section class="col-3 col-6-narrower col-12-mobilep">
+							</section>
+							<section class="col-3 col-6-narrower col-12-mobilep">
+							</section>
+							<section class="col-6 col-12-narrower">
+								<h3>Get In Touch</h3>
+								<form method="post" action="https://forms.un-static.com/forms/5c234fdc4834c9398cefcbca8fa0dc8eab6dcf5e">
+									<div class="row gtr-50">
+										<div class="col-6 col-12-mobilep">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="col-6 col-12-mobilep">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<div class="col-12">
+											<textarea name="message" id="message" placeholder="Message" rows="5"></textarea>
+										</div>
+										<div class="col-12">
+											<ul class="actions">
+												<li><input type="submit" class="button alt" value="Send Message" /></li>
+											</ul>
+										</div>
+									</div>
+								</form>
+							</section>
+						</div>
+					</div>
+
+					<!-- Copyright -->
+						<div class="copyright">
+							<ul class="menu">
+								<li>&copy; Eau Claire MeatFest. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<!-- RSVP conditional fields -->
+			<script>
+				(function () {
+					function setVisible(el, visible) {
+						el.classList.toggle('is-visible', visible);
+						var radios = el.querySelectorAll('input[type="radio"]');
+						var texts = el.querySelectorAll('input[type="text"]');
+						if (!visible) {
+							radios.forEach(function (r) { r.checked = false; r.required = false; });
+							texts.forEach(function (t) { t.value = ''; t.required = false; });
+							el.querySelectorAll('.choice').forEach(function (c) { c.classList.remove('selected'); });
+						} else {
+							radios.forEach(function (r) { r.required = true; });
+							texts.forEach(function (t) { t.required = true; });
+						}
+					}
+
+					function highlightChoice(radio) {
+						document.querySelectorAll('input[name="' + radio.name + '"]').forEach(function (r) {
+							var choice = r.closest('.choice');
+							if (choice) {
+								choice.classList.toggle('selected', r.checked);
+							}
+						});
+					}
+
+					var dishDetail = document.getElementById('dish-detail');
+					var apparatusDetail = document.getElementById('apparatus-detail');
+					var transportDetail = document.getElementById('transport-detail');
+
+					document.querySelectorAll('#rsvp-form input[type="radio"]').forEach(function (radio) {
+						radio.addEventListener('change', function () {
+							highlightChoice(radio);
+						});
+					});
+
+					document.querySelectorAll('input[name="bringing_dish"]').forEach(function (radio) {
+						radio.addEventListener('change', function () {
+							setVisible(dishDetail, radio.value === 'Yes' && radio.checked);
+						});
+					});
+
+					document.querySelectorAll('input[name="coming_early"]').forEach(function (radio) {
+						radio.addEventListener('change', function () {
+							var showApparatus = radio.value === 'Yes' && radio.checked;
+							setVisible(apparatusDetail, showApparatus);
+							if (!showApparatus) {
+								setVisible(transportDetail, false);
+							}
+						});
+					});
+
+					document.querySelectorAll('input[name="own_apparatus"]').forEach(function (radio) {
+						radio.addEventListener('change', function () {
+							setVisible(transportDetail, radio.value === 'Yes' && radio.checked);
+						});
+					});
+				})();
+			</script>
+
+	</body>
+</html>
