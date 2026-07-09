@@ -11,6 +11,35 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<style>
+			.lightbox-trigger {
+				cursor: zoom-in;
+			}
+			.lightbox-overlay {
+				position: fixed;
+				inset: 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: 2em;
+				background: rgba(0, 0, 0, 0.85);
+				opacity: 0;
+				pointer-events: none;
+				transition: opacity 0.25s ease;
+				z-index: 9999;
+			}
+			.lightbox-overlay.is-visible {
+				opacity: 1;
+				pointer-events: auto;
+			}
+			.lightbox-overlay img {
+				max-width: 100%;
+				max-height: 100%;
+				border-radius: 5px;
+				box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+				cursor: zoom-out;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 		<div id="page-wrapper">
@@ -96,7 +125,7 @@
 
 											</header>
 
-											<span class="image featured"><img src="images/VISIO_ymfiqyNHwv.png" alt="" /></span>
+											<span class="image featured lightbox-trigger" id="parking-map-trigger"><img src="images/MeatFest%20026.png" alt="Parking map" /></span>
 										</article>
 								</div>
 							</div>
@@ -147,6 +176,11 @@
 
 		</div>
 
+		<!-- Lightbox -->
+			<div class="lightbox-overlay" id="parking-lightbox" aria-hidden="true">
+				<img src="images/MeatFest%20026.png" alt="Parking map, expanded" />
+			</div>
+
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
@@ -154,6 +188,32 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+		<!-- Parking map lightbox -->
+			<script>
+				(function () {
+					var trigger = document.getElementById('parking-map-trigger');
+					var overlay = document.getElementById('parking-lightbox');
+
+					function open() {
+						overlay.classList.add('is-visible');
+						overlay.setAttribute('aria-hidden', 'false');
+					}
+
+					function close() {
+						overlay.classList.remove('is-visible');
+						overlay.setAttribute('aria-hidden', 'true');
+					}
+
+					trigger.addEventListener('click', open);
+					overlay.addEventListener('click', close);
+					document.addEventListener('keydown', function (e) {
+						if (e.key === 'Escape') {
+							close();
+						}
+					});
+				})();
+			</script>
 
 	</body>
 </html>
