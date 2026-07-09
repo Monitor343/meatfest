@@ -14,18 +14,20 @@
 		<link rel="icon" href="../favicon.ico" type="image/x-icon">
 		<style>
 			.conditional-field {
-				max-height: 0;
+				display: grid;
+				grid-template-rows: 0fr;
 				opacity: 0;
-				overflow: hidden;
-				transform: translateY(-8px);
-				transition: max-height 0.4s ease, opacity 0.3s ease, transform 0.3s ease;
+				transition: grid-template-rows 0.4s ease, opacity 0.3s ease;
 				pointer-events: none;
 			}
 			.conditional-field.is-visible {
-				max-height: 12em;
+				grid-template-rows: 1fr;
 				opacity: 1;
-				transform: translateY(0);
 				pointer-events: auto;
+			}
+			.conditional-field-inner {
+				overflow: hidden;
+				min-height: 0;
 			}
 			.choice {
 				position: relative;
@@ -155,49 +157,69 @@
 														<p><i>I promise not to sell your email to data brokers.</i></p>
 													</div>
 													<div class="col-12">
-														<label for="rsvp-party-size">How many will be joining?</label>
-														<input type="number" name="party_size" id="rsvp-party-size" placeholder="Number of people" min="1" step="1" required />
-													</div>
-
-													<div class="col-12">
-														<label>Will you be bringing a dish?</label>
+														<label>Will you be joining us at MeatFest '026?</label>
 														<ul class="actions">
-															<li><label class="choice"><input type="radio" name="bringing_dish" value="Yes" required /> Yes</label></li>
-															<li><label class="choice"><input type="radio" name="bringing_dish" value="No" required /> No</label></li>
-														</ul>
-													</div>
-													<div class="col-12 conditional-field" id="dish-detail">
-														<label for="rsvp-dish">What dish will you be bringing?</label>
-														<input type="text" name="dish" id="rsvp-dish" placeholder="Dish" />
-													</div>
-
-													<div class="col-12">
-														<label>Are you interested in coming early to help with the cooking of The MEATS?</label>
-														<ul class="actions">
-															<li><label class="choice"><input type="radio" name="coming_early" value="Yes" required /> Yes</label></li>
-															<li><label class="choice"><input type="radio" name="coming_early" value="No" required /> No</label></li>
+															<li><label class="choice"><input type="radio" name="attending" value="Yes" required /> Yes</label></li>
+															<li><label class="choice"><input type="radio" name="attending" value="No" required /> No</label></li>
 														</ul>
 													</div>
 
-													<div class="col-12 conditional-field" id="apparatus-detail">
-														<label>Will you be bringing your own BBQ apparatus?</label>
-														<ul class="actions">
-															<li><label class="choice"><input type="radio" name="own_apparatus" value="Yes" /> Yes</label></li>
-															<li><label class="choice"><input type="radio" name="own_apparatus" value="No" /> No</label></li>
-														</ul>
-													</div>
+													<div class="col-12 conditional-field" id="attending-detail">
+														<div class="conditional-field-inner">
+															<div class="row gtr-50">
+																<div class="col-12">
+																	<label for="rsvp-party-size">How many will be joining?</label>
+																	<input type="number" name="party_size" id="rsvp-party-size" placeholder="Number of people" min="1" step="1" class="gated-required" />
+																</div>
 
-													<div class="col-12 conditional-field" id="transport-detail">
-														<label>Do you require BBQ apparatus transportation support?</label>
-														<ul class="actions">
-															<li><label class="choice"><input type="radio" name="transport_support" value="Yes" /> Yes</label></li>
-															<li><label class="choice"><input type="radio" name="transport_support" value="No" /> No</label></li>
-														</ul>
-													</div>
+																<div class="col-12">
+																	<label>Will you be bringing a dish?</label>
+																	<ul class="actions">
+																		<li><label class="choice"><input type="radio" name="bringing_dish" value="Yes" class="gated-required" /> Yes</label></li>
+																		<li><label class="choice"><input type="radio" name="bringing_dish" value="No" class="gated-required" /> No</label></li>
+																	</ul>
+																</div>
+																<div class="col-12 conditional-field" id="dish-detail">
+																	<div class="conditional-field-inner">
+																		<label for="rsvp-dish">What dish will you be bringing?</label>
+																		<input type="text" name="dish" id="rsvp-dish" placeholder="Dish" class="gated-required" />
+																	</div>
+																</div>
 
-													<div class="col-12">
-														<label for="rsvp-allergies">Do you have any food allergies I should be aware of?</label>
-														<textarea name="allergies" id="rsvp-allergies" placeholder="Allergies (enter &quot;None&quot; if not applicable)" rows="4" required></textarea>
+																<div class="col-12">
+																	<label>Are you interested in coming early to help with the cooking of The MEATS?</label>
+																	<ul class="actions">
+																		<li><label class="choice"><input type="radio" name="coming_early" value="Yes" class="gated-required" /> Yes</label></li>
+																		<li><label class="choice"><input type="radio" name="coming_early" value="No" class="gated-required" /> No</label></li>
+																	</ul>
+																</div>
+
+																<div class="col-12 conditional-field" id="apparatus-detail">
+																	<div class="conditional-field-inner">
+																		<label>Will you be bringing your own BBQ apparatus?</label>
+																		<ul class="actions">
+																			<li><label class="choice"><input type="radio" name="own_apparatus" value="Yes" class="gated-required" /> Yes</label></li>
+																			<li><label class="choice"><input type="radio" name="own_apparatus" value="No" class="gated-required" /> No</label></li>
+																		</ul>
+																	</div>
+																</div>
+
+																<div class="col-12 conditional-field" id="transport-detail">
+																	<div class="conditional-field-inner">
+																		<label>Do you require BBQ apparatus transportation support?</label>
+																		<ul class="actions">
+																			<li><label class="choice"><input type="radio" name="transport_support" value="Yes" class="gated-required" /> Yes</label></li>
+																			<li><label class="choice"><input type="radio" name="transport_support" value="No" class="gated-required" /> No</label></li>
+																		</ul>
+																	</div>
+																</div>
+
+																<div class="col-12">
+																	<label for="rsvp-allergies">Do you have any food allergies I should be aware of?</label>
+																	<textarea name="allergies" id="rsvp-allergies" placeholder="Allergies (enter &quot;None&quot; if not applicable)" rows="4" class="gated-required"></textarea>
+																</div>
+															</div>
+														</div>
 													</div>
 
 													<div class="col-12">
@@ -270,15 +292,17 @@
 				(function () {
 					function setVisible(el, visible) {
 						el.classList.toggle('is-visible', visible);
-						var radios = el.querySelectorAll('input[type="radio"]');
-						var texts = el.querySelectorAll('input[type="text"]');
 						if (!visible) {
-							radios.forEach(function (r) { r.checked = false; r.required = false; });
-							texts.forEach(function (t) { t.value = ''; t.required = false; });
+							el.querySelectorAll('input[type="radio"]').forEach(function (r) { r.checked = false; r.required = false; });
+							el.querySelectorAll('input[type="text"], input[type="number"], textarea').forEach(function (f) { f.value = ''; f.required = false; });
 							el.querySelectorAll('.choice').forEach(function (c) { c.classList.remove('selected'); });
+							el.querySelectorAll('.conditional-field').forEach(function (nested) { nested.classList.remove('is-visible'); });
 						} else {
-							radios.forEach(function (r) { r.required = true; });
-							texts.forEach(function (t) { t.required = true; });
+							el.querySelectorAll('.gated-required').forEach(function (f) {
+								if (f.closest('.conditional-field') === el) {
+									f.required = true;
+								}
+							});
 						}
 					}
 
@@ -291,6 +315,7 @@
 						});
 					}
 
+					var attendingDetail = document.getElementById('attending-detail');
 					var dishDetail = document.getElementById('dish-detail');
 					var apparatusDetail = document.getElementById('apparatus-detail');
 					var transportDetail = document.getElementById('transport-detail');
@@ -298,6 +323,12 @@
 					document.querySelectorAll('#rsvp-form input[type="radio"]').forEach(function (radio) {
 						radio.addEventListener('change', function () {
 							highlightChoice(radio);
+						});
+					});
+
+					document.querySelectorAll('input[name="attending"]').forEach(function (radio) {
+						radio.addEventListener('change', function () {
+							setVisible(attendingDetail, radio.value === 'Yes' && radio.checked);
 						});
 					});
 
