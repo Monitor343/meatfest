@@ -76,7 +76,8 @@ errors, screenshots, and native HTML5 validation behavior specifically.
 ## Workflow
 
 - Only commit/push when explicitly asked ("commit and push"). Commit messages
-  end with `Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>`.
+  end with a `Co-Authored-By:` line naming the model that actually wrote the
+  commit, e.g. `Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>`.
 - HTML files are tab-indented. If an `Edit` `old_string` match fails, suspect
   whitespace — check with `python3 -c "print(repr(open(f).readlines()[n]))"`
   rather than guessing at indentation.
